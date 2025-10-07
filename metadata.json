@@ -1,0 +1,5 @@
+{
+  "name": "Monkey Shoulders Co-Living Dashboard",
+  "description": "A modern, responsive tenant dashboard for Monkey Shoulders Co-Living PG. Tenants can manage meals, view rent status, submit complaints with AI assistance, and view announcements.",
+  "requestFramePermissions": []
+}
