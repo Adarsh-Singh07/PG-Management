@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { User, Meal, Payment, Complaint, Announcement, MealDecision, ComplaintStatus } from '../types';
+import { User, Meal, Payment, Complaint, Announcement, MealDecision } from '../types';
 import { getDashboardData } from '../services/apiService';
 import { useAuth } from '../contexts/AuthContext';
 import ProfileCard from './ProfileCard';
