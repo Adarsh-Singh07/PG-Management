@@ -1,14 +1,10 @@
-
 import { GoogleGenAI } from "@google/genai";
 
-if (!process.env.API_KEY) {
-  console.warn("API_KEY environment variable not set. AI features will not work.");
-}
-
-const ai = new GoogleGenAI({ apiKey: process.env.API_KEY! });
+// Ensure we don't crash when apiKey is undefined, we will only check and use it when necessary
+const ai = new GoogleGenAI({ apiKey: process.env.API_KEY || "dummy_key_to_prevent_crash_at_build_time" });
 
 export const refineComplaintText = async (originalText: string): Promise<string> => {
-  if (!process.env.API_KEY) {
+  if (!process.env.API_KEY || process.env.API_KEY === "dummy_key_to_prevent_crash_at_build_time") {
     throw new Error("API key is not configured.");
   }
   
