@@ -1,11 +1,11 @@
 import React from 'react';
 import { AuthProvider, useAuth } from './contexts/AuthContext';
-import LoginPage from './pages/LoginPage';
-import DashboardPage from './pages/DashboardPage';
-import AdminDashboardPage from './pages/AdminDashboardPage';
-import CookDashboardPage from './pages/CookDashboardPage';
-import ManagerDashboardPage from './pages/ManagerDashboardPage';
-import OwnerDashboardPage from './pages/OwnerDashboardPage';
+import LoginPage from './views/LoginPage';
+import DashboardPage from './views/DashboardPage';
+import AdminDashboardPage from './views/AdminDashboardPage';
+import CookDashboardPage from './views/CookDashboardPage';
+import ManagerDashboardPage from './views/ManagerDashboardPage';
+import OwnerDashboardPage from './views/OwnerDashboardPage';
 import { UserRole } from './types';
 
 const AppContent: React.FC = () => {

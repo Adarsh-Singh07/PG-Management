@@ -1,3 +1,4 @@
+"use client";
 import React, { createContext, useState, useContext, useEffect, ReactNode } from 'react';
 import { User } from '../types';
 import { login as apiLogin } from '../services/apiService';
@@ -14,6 +15,7 @@ const AuthContext = createContext<AuthContextType | undefined>(undefined);
 
 // A helper function to get user from localStorage safely
 const getUserFromStorage = (): User | null => {
+  if (typeof window === 'undefined') return null;
   try {
     const storedUser = localStorage.getItem('user');
     return storedUser ? JSON.parse(storedUser) : null;
@@ -30,12 +32,9 @@ export const AuthProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
 
   useEffect(() => {
     // On initial load, check if we have a token.
-    // A real app might have a refresh token flow or a /api/user/me endpoint
-    // to verify the token and get fresh user data.
     const token = localStorage.getItem('authToken');
     if (token && user) {
       // Assume token is valid for this simulation.
-      // In a real app, you'd verify it here.
     } else {
         // If there's no token, ensure user is logged out.
         setUser(null);
