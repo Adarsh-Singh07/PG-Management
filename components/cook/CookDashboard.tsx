@@ -1,3 +1,4 @@
+"use client";
 import React, { useState, useEffect } from 'react';
 import { CookDashboardData, Meal, MealDecision } from '../../types';
 import { getCookData } from '../../services/apiService';

@@ -1,3 +1,4 @@
+"use client";
 import React, { useState, useEffect } from 'react';
 import { Complaint, ComplaintStatus } from '../../types';
 import { getManagerData } from '../../services/apiService';

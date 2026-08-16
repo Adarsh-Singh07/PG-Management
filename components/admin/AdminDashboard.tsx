@@ -1,3 +1,4 @@
+"use client";
 import React, { useState, useEffect } from 'react';
 import { FullTenant, OccupancyStats, Announcement } from '../../types';
 import { getAdminData } from '../../services/apiService';

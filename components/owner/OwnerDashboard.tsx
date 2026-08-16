@@ -1,3 +1,4 @@
+"use client";
 import React, { useState, useEffect } from 'react';
 import { OccupancyStats, FinancialStats, Complaint, Announcement } from '../../types';
 import { getOwnerData } from '../../services/apiService';
