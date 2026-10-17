@@ -174,10 +174,8 @@ nav.scrolled .nav-links{color:var(--ink2)}
 .rev-score .big{font-family:Fraunces,serif;font-size:3rem;line-height:1}
 .rev-score .stars{color:#E79A3C;letter-spacing:4px;font-size:1.1rem}
 .rev-score small{color:var(--muted);font-weight:600}
-.dist{display:grid;gap:7px;max-width:420px}
-.dist .row{display:grid;grid-template-columns:44px 1fr 28px;gap:10px;align-items:center;font-size:.83rem;font-weight:700;color:var(--ink2)}
-.dist .bar{background:#fff;border-radius:99px;height:10px;overflow:hidden;box-shadow:inset 0 1px 3px rgba(0,0,0,.08)}
-.dist .fill{height:100%;background:linear-gradient(90deg,#F6C390,#DE8B4E);border-radius:99px}
+.rev-agg p{font-size:.95rem;color:var(--ink2);max-width:420px;line-height:1.6;margin:0}
+.rev-agg b{color:var(--ink)}
 .rev-view{position:relative}
 .rev-track{display:flex;gap:18px;overflow-x:auto;padding:6px 2px 24px;scroll-snap-type:x mandatory;scrollbar-width:none;cursor:grab}
 .rev-track::-webkit-scrollbar{display:none}
@@ -303,6 +301,7 @@ a,button{touch-action:manipulation;-webkit-tap-highlight-color:transparent}
 <ul><li><svg viewBox="0 0 24 24"><path d="M4 12.5l5 5L20 6.5"/></svg>3 meals/day — veg &amp; non-veg, G-floor dining</li>
 <li><svg viewBox="0 0 24 24"><path d="M4 12.5l5 5L20 6.5"/></svg>WiFi, electricity, housekeeping &amp; laundry included</li>
 <li><svg viewBox="0 0 24 24"><path d="M4 12.5l5 5L20 6.5"/></svg>TV in room · fridge on your floor · wardrobe &amp; study desk</li>
+<li><svg viewBox="0 0 24 24"><path d="M4 12.5l5 5L20 6.5"/></svg>Private balcony in every room · attached bathroom</li>
 <li><svg viewBox="0 0 24 24"><path d="M4 12.5l5 5L20 6.5"/></svg>Terrace gym, TT, WFH lounge, rooftop access</li>
 <li><svg viewBox="0 0 24 24"><path d="M4 12.5l5 5L20 6.5"/></svg>Deposit ₹5,000 (refundable) · Booking ₹5,000 · Notice 30 days</li></ul>
 </div></div></div>
@@ -318,6 +317,7 @@ a,button{touch-action:manipulation;-webkit-tap-highlight-color:transparent}
 <ul><li><svg viewBox="0 0 24 24"><path d="M4 12.5l5 5L20 6.5"/></svg>3 meals/day — veg &amp; non-veg, G-floor dining</li>
 <li><svg viewBox="0 0 24 24"><path d="M4 12.5l5 5L20 6.5"/></svg>WiFi, electricity, housekeeping &amp; laundry included</li>
 <li><svg viewBox="0 0 24 24"><path d="M4 12.5l5 5L20 6.5"/></svg>TV in room · fridge on your floor · wardrobe &amp; study desk</li>
+<li><svg viewBox="0 0 24 24"><path d="M4 12.5l5 5L20 6.5"/></svg>Private balcony in every room · attached bathroom</li>
 <li><svg viewBox="0 0 24 24"><path d="M4 12.5l5 5L20 6.5"/></svg>Terrace gym, TT, WFH lounge, rooftop access</li>
 <li><svg viewBox="0 0 24 24"><path d="M4 12.5l5 5L20 6.5"/></svg>Deposit ₹5,000 (refundable) · Booking ₹5,000 · Notice 30 days</li></ul>
 </div></div></div>
@@ -353,13 +353,7 @@ a,button{touch-action:manipulation;-webkit-tap-highlight-color:transparent}
 <div class="sec-head rv"><span class="kicker">Google reviews · 4.2★ · 66</span><h2 class="h2">Residents say it <em>best.</em></h2></div>
 <div class="rev-head rv">
 <div class="rev-score"><span class="big">4.2</span><div><div class="stars">★★★★☆</div><small>66 Google reviews</small></div></div>
-<div class="dist" role="img" aria-label="Rating distribution: 50 five-star, 3 four-star, 0 three-star, 0 two-star, 13 one-star reviews">
-<div class="row"><span>5 ★</span><div class="bar"><div class="fill" style="width:75.8%"></div></div><span>50</span></div>
-<div class="row"><span>4 ★</span><div class="bar"><div class="fill" style="width:4.5%"></div></div><span>3</span></div>
-<div class="row"><span>3 ★</span><div class="bar"><div class="fill" style="width:0%"></div></div><span>0</span></div>
-<div class="row"><span>2 ★</span><div class="bar"><div class="fill" style="width:0%"></div></div><span>0</span></div>
-<div class="row"><span>1 ★</span><div class="bar"><div class="fill" style="width:19.7%"></div></div><span>13</span></div>
-</div></div>
+<div class="rev-agg rv"><p>4.2★ across <b>66 Google reviews</b> — with residents calling out safety, hygiene and friendly staff.</p></div></div>
 <div class="rev-view rv"><div class="rev-track" id="rev-track" tabindex="0" role="region" aria-roledescription="carousel" aria-label="Resident reviews — swipe or use arrow keys"></div>
 <div class="rev-nav">
 <button class="rev-arrow" id="rev-prev" aria-label="Previous review"><svg viewBox="0 0 24 24"><path d="M15 5l-7 7 7 7"/></svg></button>
@@ -468,7 +462,7 @@ const AMEN=[
  ["wifi","#DCEFE2","WiFi + power, always on","Never think about bills.",
   ["High-speed WiFi in every room & lounge","Power backup — work through outages","24/7 water supply"]],
  ["bed","#DCECF7","Room comfort","Everything a room needs.",
-  ["TV in every room","Fridge on each floor","Wardrobe & study desk","Housekeeping + laundry included"]],
+  ["Private balcony in every room · attached bathroom","TV in every room","Fridge on each floor","Wardrobe & study desk","Housekeeping + laundry included"]],
  ["shield","#FFE7D6","Security & basics","Locked down, looked after.",
   ["CCTV-secured gated building","RO purified drinking water","Lift across all 6 floors","Dedicated 2-wheeler parking"]]
 ];
@@ -555,13 +549,21 @@ layout();
 })();
 /* ============ REVIEWS — swipeable, animated, auto-advance ============ */
 const REVIEWS=[
- ["thejaswi ketham",5,"Stayed ~8 months. Loved the hospitality, caretaker Pramod and the cook.","Stayed 8 months","Google Review"],
- ["Narendra Nandigam",5,"Well-maintained PG, walkable to the ITPL back gate.","Google Review","Google Review"],
- ["Manvitha Kancharla",5,"Clean rooms, regular housekeeping, friendly staff.","Google Review","Google Review"],
- ["Jnanesh Gowdru",5,"Good premium rooms with a gym — worth the money.","Google Review","Google Review"],
- ["BALU PALLA",4,"Decent, well-maintained rooms.","Local Guide","Google Review"],
- ["G Mahesh",5,"Feels like home. Tasty food, very hygienic.","Google Review","Google Review"],
- ["Danala Chittibabu",5,"Good people, good food.","Google Review","Google Review"]
+ ["thejaswi ketham",5,"Stayed ~8 months. Loved the owners' hospitality — caretaker Pramod never said no to anything, the cook was amazing. Thank you Swathi garu!","Stayed 8 months","Google Review"],
+ ["Sathish Kumar",5,"All rooms have a balcony, attached bathroom, Smart TV and a fan. Good food 3 times a day, WiFi, washing machine and a spacious gym.","Local Guide","Google Review"],
+ ["Manvitha Kancharla",5,"Clean, well-maintained rooms with regular housekeeping. Decent, hygienic food — and a friendly, cooperative atmosphere.","Google Review","Google Review"],
+ ["Rakesh Yadav",5,"I am happy with my son's stay. Tasty hygienic food, always clean, well-managed security — it truly stands out.","A parent","Google Review"],
+ ["Narendra Nandigam",5,"Well-maintained PG with very good amenities. Walkable from the ITPL back gate.","Google Review","Google Review"],
+ ["KETHIREDDY SATHYANANDA REDDY",5,"A nice balcony and open lake view, no high-rises around — peaceful and refreshing. Clean rooms.","Google Review","Google Review"],
+ ["Souvik Karmakar",5,"Clean, nice co-living PG. The staff were helpful and friendly.","Stayed 2 months","Google Review"],
+ ["RL SOMANTH SOMA",5,"Well-maintained, clean, spacious and furnished — bed, wardrobe, study table. A good experience.","Local Guide","Google Review"],
+ ["Murali krishnan N",5,"Friendly, helpful staff; clean well-maintained rooms; good food; WiFi and housekeeping included.","Local Guide","Google Review"],
+ ["Karthik radja",5,"Well-located PG with comfortable, clean rooms. Friendly staff — highly recommend.","Local Guide","Google Review"],
+ ["Pramod Bohora",5,"Well-maintained PG in and around Nallurhalli. Very good, hygienic food. I strongly recommend it.","Google Review","Google Review"],
+ ["Jnanesh Gowdru",5,"Good premium rooms with gym. Overall a good PG — worth the money.","Google Review","Google Review"],
+ ["G Mahesh",5,"Excellent experience — tasty food, very clean and hygienic. Feels like home. Highly recommend.","Google Review","Google Review"],
+ ["Manju Ks Reddy",5,"A nice, cozy place to stay with all facilities. Highly recommended.","Local Guide","Google Review"],
+ ["BALU PALLA",4,"Decent, nearly well-maintained rooms. Food is average comparatively.","Local Guide","Google Review"]
 ];
 (function(){
 const track=document.getElementById("rev-track"),dots=document.getElementById("rev-dots");
@@ -578,6 +580,14 @@ track.addEventListener("pointerdown",e=>{if(e.pointerType!=="mouse")return;drag=
 track.addEventListener("pointermove",e=>{if(!drag)return;const now=performance.now();mv=((e.clientX-lx)/Math.max(now-lt,1))*16.7;lx=e.clientX;lt=now;track.scrollLeft=sl-(e.clientX-sx)});
 function mend(){if(!drag)return;drag=false;let v=-mv;mv=0;(function glide(){v*=0.93;if(Math.abs(v)<0.6){track.style.scrollSnapType="";sync();resume();return}track.scrollLeft+=v;requestAnimationFrame(glide)})()}
 ["pointerup","pointercancel"].forEach(ev=>track.addEventListener(ev,mend));
+/* vertical mouse wheel -> horizontal rail scroll (page scroll resumes at the ends) */
+track.addEventListener("wheel",e=>{
+  if(Math.abs(e.deltaX)>Math.abs(e.deltaY))return;
+  const max=track.scrollWidth-track.clientWidth;
+  if(max<=1)return;
+  const dir=e.deltaY>0?1:-1;
+  if((dir>0&&track.scrollLeft<max-1)||(dir<0&&track.scrollLeft>1)){e.preventDefault();pause();track.scrollLeft+=dir*track.clientWidth*0.55;setTimeout(resume,2500)}
+},{passive:false});
 track.addEventListener("keydown",e=>{if(e.key==="ArrowLeft"){to(active()-1);e.preventDefault()}else if(e.key==="ArrowRight"){to(active()+1);e.preventDefault()}});
 document.getElementById("rev-prev").onclick=()=>to(active()-1);
 document.getElementById("rev-next").onclick=()=>to(active()+1);
