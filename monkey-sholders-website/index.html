@@ -2,17 +2,19 @@
 <html lang="en"><head>
 <meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/>
 <title>Monkey Sholders Co-living PG — Nallurhalli, Whitefield | Twin ₹11,000 · Single ₹18,000 · All-Inclusive</title>
-<meta name="description" content="6-floor co-living PG in Nallurhalli, Whitefield — walkable to ITPL. 3 meals, WiFi, laundry, everything included. Twin ₹11,000, Single ₹18,000. Deposit only ₹5,000."/>
+<meta name="description" content="6-floor co-living PG in Nallurhalli, Whitefield — walkable to ITPL. Twin ₹11,000, Single ₹18,000, all-inclusive. Booking 100% redeemable. Real photos & videos."/>
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='15' fill='%23F2B27C'/%3E%3Ctext x='32' y='43' font-family='Georgia,serif' font-size='36' font-weight='bold' text-anchor='middle' fill='%232B1F16'%3EM%3C/text%3E%3C/svg%3E"/>
 <meta property="og:title" content="Monkey Sholders Co-living PG — Nallurhalli, Whitefield"/>
-<meta property="og:description" content="Walkable to ITPL. Twin ₹11,000 · Single ₹18,000, all-inclusive. Deposit only ₹5,000 — no move-out fee. Real photos & videos of the property."/>
+<meta property="og:description" content="Walkable to ITPL. Twin ₹11,000 · Single ₹18,000, all-inclusive. Booking 100% redeemable — no move-out fee. Real photos & videos of the property."/>
 <meta property="og:type" content="website"/>
 <meta property="og:image" content="assets/rooftop-night.jpg"/>
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="preload" as="image" href="assets/rooftop-night.jpg"/>
+<link rel="preload" as="image" href="assets/terrace-view-night.jpg"/>
+<link rel="preload" as="image" href="assets/gym.jpg"/>
 <style>
-/* ============ V3 DESIGN SYSTEM ============ */
+/* ============ V4 DESIGN SYSTEM — anti-bento, ThreeUI card motion ============ */
 :root{
   --cream:#FFF9F2; --paper:#FFFDF9;
   --ink:#2B1F16; --ink2:#5A4739; --muted:#8A7365;
@@ -63,44 +65,42 @@ nav.scrolled .brand{color:var(--ink)}
 .brand .mono svg{width:24px;height:24px}
 .brand .word{font-family:Fraunces,serif;font-weight:700;font-size:1.32rem;letter-spacing:-.01em}
 .brand .tag{font-family:Inter;font-size:10px;font-weight:800;letter-spacing:.08em;background:var(--mint);color:#20503A;padding:5px 10px;border-radius:99px}
-@media(max-width:640px){.brand .word{font-size:1.02rem}.brand .tag{display:none}.brand .mono{width:34px;height:34px;border-radius:10px}}
+@media(max-width:640px){.brand .word{font-size:1.02rem}.brand .tag{display:none}.brand .mono{width:34px;height:34px;border-radius:10px}.nav-cta .btn.ghost{display:none}}
 .nav-links{display:flex;gap:30px;font-weight:700;font-size:14.5px;color:#FFEFE0;transition:color .35s}
 nav.scrolled .nav-links{color:var(--ink2)}
 .nav-links a{opacity:.92}.nav-links a:hover{opacity:1}
 @media(max-width:900px){.nav-links{display:none}}
 .nav-cta{display:flex;gap:9px;align-items:center}
 .nav-cta .btn{padding:11px 20px;min-height:44px;font-size:14px}
-/* hero */
+/* hero — ambient 3-photo banner: slow crossfade + Ken Burns, no controls */
 .hero{position:relative;min-height:96svh;display:flex;align-items:flex-end;color:#fff;overflow:hidden;background:#1d130c}
-.hero-bg{position:absolute;inset:0;background:url(assets/rooftop-night.jpg) center/cover no-repeat;transform:scale(1.08);will-change:transform}
-.hero-shade{position:absolute;inset:0;background:linear-gradient(180deg,rgba(24,13,6,.5) 0%,rgba(24,13,6,.08) 30%,rgba(24,13,6,.28) 60%,rgba(20,11,5,.88) 100%)}
-.hero-in{position:relative;z-index:3;width:100%;padding:120px 0 52px}
-.hero .badge{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.96);color:var(--ink);border-radius:999px;padding:9px 16px;font-weight:800;font-size:13.5px;box-shadow:var(--sh)}
-.hero .badge svg{width:15px;height:15px;color:var(--caramel)}
-.hero h1{font-size:var(--t-h1);margin:18px 0 14px;max-width:12ch;color:#fff}
+.hero-bg{position:absolute;inset:0;will-change:transform}
+.hero-slide{position:absolute;inset:0;background:center/cover no-repeat;opacity:0;transition:opacity 2.6s ease;transform:scale(1.1)}
+.hero-slide.on{opacity:1;animation:kb 9s ease-in-out infinite alternate}
+@keyframes kb{from{transform:scale(1.1)}to{transform:scale(1.02) translateY(-1.5%)}}
+/* strong scrim anchored behind ALL text — solid text colours, no washout */
+.hero-shade{position:absolute;inset:0;background:linear-gradient(180deg,rgba(17,10,4,.66) 0%,rgba(17,10,4,.42) 34%,rgba(17,10,4,.6) 62%,rgba(15,8,3,.94) 100%)}
+.hero-in{position:relative;z-index:3;width:100%;padding:120px var(--gut) 52px}
+.hero h1{font-size:var(--t-h1);margin:0 0 14px;max-width:12ch;color:#fff;text-wrap:balance}
 .hero h1 em{font-style:italic;font-weight:500;color:#FFD9AE}
-.hero .sub{font-size:clamp(1rem,2.4vw,1.15rem);line-height:1.62;color:#F3E4D3;max-width:32rem;margin-bottom:26px}
-.hero-prices{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:26px}
-.pchip{background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.3);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-radius:var(--r-md);padding:13px 18px;min-width:170px}
-.pchip span{display:block;font-size:11px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;opacity:.85;margin-bottom:4px}
-.pchip b{font-family:Fraunces,serif;font-size:1.55rem;font-weight:700}
-.pchip s{opacity:.6;font-size:.9rem;margin-right:8px;font-weight:500}
-.pchip small{font-weight:600;opacity:.85}
+.hero .sub{font-size:clamp(1rem,2.4vw,1.15rem);line-height:1.62;color:#F8E9D6;max-width:32rem;margin-bottom:18px}
+.hero-price{display:flex;align-items:baseline;flex-wrap:wrap;gap:6px 10px;margin-bottom:26px;font-weight:600;color:#F3E2CC;font-size:1rem}
+.hero-price b{font-family:Fraunces,serif;font-size:1.45rem;color:#fff;font-weight:700;white-space:nowrap}
+.hero-price .sep{opacity:.45}
+.hero-price .all{display:block;flex-basis:100%;font-size:.78rem;letter-spacing:.1em;text-transform:uppercase;font-weight:800;color:#FFD9AE}
 .hero-cta{display:flex;gap:12px;flex-wrap:wrap}
-@media(max-width:640px){.hero-cta .btn{flex:1 1 100%}.pchip{flex:1 1 calc(50% - 6px);min-width:0;text-align:center;padding:11px 8px}}
+@media(max-width:640px){.hero-cta .btn{flex:1 1 100%}}
 /* marquee */
 .marquee{background:var(--ink);color:#FFDDBE;overflow:hidden;padding:14px 0;font-weight:800;font-size:13.5px;letter-spacing:.06em}
 .mq-track{display:flex;gap:44px;white-space:nowrap;width:max-content;animation:mq 30s linear infinite}
 @keyframes mq{to{transform:translateX(-50%)}}
-/* proof strip — single editorial row, no bento */
-.proof{margin-top:-40px;position:relative;z-index:5}
-.proof-in{background:var(--paper);border:1px solid var(--line);border-radius:var(--r-lg);box-shadow:var(--sh);display:flex;overflow-x:auto;scrollbar-width:none}
-.proof-in::-webkit-scrollbar{display:none}
-.proof-cell{flex:1 0 auto;display:flex;align-items:center;gap:14px;padding:22px 28px;min-width:max-content}
-.proof-cell+.proof-cell{border-left:1px solid var(--line)}
-.proof-cell b{font-family:Fraunces,serif;font-size:1.7rem;display:block;line-height:1.1}
-.proof-cell span{font-size:.83rem;color:var(--muted);font-weight:600}
-@media(max-width:640px){.proof{margin-top:-32px}.proof-cell{padding:18px 22px;scroll-snap-align:start}.proof-in{scroll-snap-type:x mandatory}}
+/* proof line — editorial text strip on ink, zero boxes (anti-bento) */
+.proofline{background:var(--ink);color:#F6E3CB;overflow:hidden;position:relative;z-index:5}
+.pl-in{max-width:var(--wrap);margin:0 auto;padding:19px var(--gut);display:flex;flex-wrap:wrap;align-items:center;gap:10px 26px;justify-content:center;font-size:.95rem;font-weight:600}
+.pl-in b{font-family:Fraunces,serif;font-size:1.18rem;color:#FFD9AE;font-weight:700;white-space:nowrap}
+.pl-in .dot{opacity:.35;font-size:.7rem}
+.pl-in .hl{color:#FFD9AE;font-weight:800}
+@media(max-width:640px){.pl-in{font-size:.87rem;gap:8px 18px}}
 /* ============ KNOW-MORE cards (tap to expand) ============ */
 .km{border:1px solid var(--line);border-radius:var(--r-lg);background:var(--paper);overflow:hidden;transition:box-shadow .35s var(--ease),border-color .35s}
 .km.open{box-shadow:var(--sh);border-color:transparent}
@@ -121,24 +121,31 @@ nav.scrolled .nav-links{color:var(--ink2)}
 .km-detail li{display:flex;gap:10px;align-items:flex-start}
 .km-detail li svg{width:17px;height:17px;flex:none;margin-top:4px;stroke:var(--mint-d);stroke-width:2.2;fill:none;stroke-linecap:round;stroke-linejoin:round}
 @media(max-width:640px){.km-btn{padding:18px;gap:14px}.km-detail{padding:0 18px 22px 18px}}
-/* rooms — editorial split rows */
-.room{display:grid;grid-template-columns:1.02fr .98fr;border-radius:var(--r-lg);overflow:hidden;background:var(--paper);box-shadow:var(--sh);margin-top:var(--sp4)}
-.room.flip .r-media{order:2}
-@media(max-width:900px){.room{grid-template-columns:1fr}.room.flip .r-media{order:0}}
-.r-media{position:relative;min-height:400px}
-.r-media img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
-@media(max-width:900px){.r-media{min-height:300px}}
-.r-save{position:absolute;left:18px;top:18px;background:var(--amber);color:#2B1F16;font-weight:800;font-size:12.5px;letter-spacing:.04em;padding:8px 14px;border-radius:999px}
-.r-body{padding:clamp(28px,4vw,46px);display:flex;flex-direction:column;justify-content:center}
-.r-body .tag{align-self:flex-start;font-size:11.5px;font-weight:800;letter-spacing:.12em;padding:7px 14px;border-radius:999px;margin-bottom:14px}
-.r-body h3{font-size:var(--t-h3);margin-bottom:6px}
-.r-body .one{color:var(--muted);margin-bottom:14px}
-.r-amt{font-family:Fraunces,serif;font-size:2.9rem;line-height:1;margin:6px 0 4px}
-.r-amt s{font-size:1.4rem;color:#C4A88F;margin-right:10px;font-weight:500}
-.r-per{color:var(--muted);font-size:.9rem;margin-bottom:20px}
-.r-body .btn{align-self:flex-start}
-@media(max-width:640px){.r-body .btn{width:100%}}
-.km-room .km-detail{padding-left:22px}
+/* rooms — horizontal snap rail of image-forward cards (anti-bento; Volta highlighted plan) */
+.rooms-rail{display:flex;gap:22px;margin-top:var(--sp3);overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;padding:6px 2px 26px}
+.rooms-rail::-webkit-scrollbar{display:none}
+.rcard{scroll-snap-align:center;flex:0 0 min(400px,84vw);background:#FFFDF9;border-radius:var(--r-lg);overflow:hidden;box-shadow:0 18px 46px rgba(96,54,20,.12);transform-style:preserve-3d;will-change:transform}
+.rcard.hl{outline:2px solid var(--amber);outline-offset:-2px}
+.rc-media{position:relative;height:250px;overflow:hidden}
+.rc-media img{width:100%;height:100%;object-fit:cover;transition:transform .8s var(--ease)}
+.rcard:hover .rc-media img{transform:scale(1.05)}
+.rc-save{position:absolute;left:16px;top:16px;background:#fff;color:#2B1F16;font-weight:800;font-size:12px;letter-spacing:.04em;padding:8px 14px;border-radius:999px;box-shadow:0 8px 20px rgba(0,0,0,.18)}
+.rc-body{padding:26px 26px 28px}
+.rc-body .rtag{display:inline-block;font-size:11px;font-weight:800;letter-spacing:.12em;padding:7px 14px;border-radius:999px;margin-bottom:12px}
+.rc-body h3{font-size:var(--t-h3)}
+.rc-body .one{color:var(--muted);font-size:.94rem;margin:6px 0 4px}
+.rc-price{display:flex;align-items:baseline;gap:10px;margin:10px 0 2px;flex-wrap:wrap}
+.rc-price s{color:#C4A88F;font-weight:500;font-size:1.15rem}
+.rc-price b{font-family:Fraunces,serif;font-size:clamp(2rem,7vw,2.3rem);line-height:1}
+.rc-per{color:var(--muted);font-size:.86rem;margin-bottom:6px}
+.rc-body .btn{width:100%;margin-top:16px}
+.rc-km{margin-top:4px;border-top:1px solid var(--line)}
+.rc-km.km{border:none;border-radius:0;background:none;overflow:hidden}
+.rc-km .km-btn{padding:16px 2px;min-height:56px}
+.rc-km .km-detail{padding:0 2px 20px}
+.rail-hint{display:flex;align-items:center;gap:10px;color:var(--muted);font-size:.85rem;font-weight:600;margin-top:2px}
+.rail-hint svg{width:34px;height:18px;stroke:var(--caramel);fill:none;stroke-width:2;stroke-linecap:round;flex:none}
+@media(max-width:640px){.rc-media{height:210px}}
 /* ============ COVERFLOW 3D SHOWCASE (Volta cylinder mechanics, coverflow geometry) ============ */
 .dark{background:linear-gradient(180deg,#241610,#160D06);color:#F7E9DA}
 .dark .kicker{color:var(--amber)}
@@ -159,14 +166,22 @@ nav.scrolled .nav-links{color:var(--ink2)}
 .cf-dots{display:flex;gap:8px}
 .cf-dots button{width:8px;height:8px;border-radius:99px;border:none;background:rgba(255,255,255,.28);cursor:pointer;min-height:36px;min-width:32px;background-clip:content-box;padding:14px 0;transition:width .45s cubic-bezier(.34,1.56,.64,1),background .3s}
 .cf-dots button.on{background:#FFC98F;background-clip:content-box}
-/* videos — cinematic cards */
-.vids{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-top:var(--sp3)}
-@media(max-width:820px){.vids{grid-template-columns:1fr}}
-.vid{border-radius:var(--r-lg);overflow:hidden;position:relative;background:#000;box-shadow:var(--sh)}
+/* videos — horizontal snap rail (anti-bento) */
+.vids{display:flex;gap:22px;margin-top:var(--sp3);overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;padding:6px 2px 26px}
+.vids::-webkit-scrollbar{display:none}
+.vid{scroll-snap-align:center;flex:0 0 min(560px,86vw);border-radius:var(--r-lg);overflow:hidden;position:relative;background:#000;box-shadow:0 18px 46px rgba(0,0,0,.35);transition:transform .5s var(--ease)}
+.vid:hover{transform:translateY(-4px)}
 .vid video{width:100%;aspect-ratio:16/9;object-fit:cover}
 .vid .vtag{position:absolute;left:16px;top:16px;background:rgba(20,12,6,.7);color:#FFE9D2;backdrop-filter:blur(8px);padding:8px 15px;border-radius:999px;font-size:12.5px;font-weight:800;letter-spacing:.06em}
-/* amenities — stacked know-more rows */
-.amen-stack{display:grid;gap:14px;margin-top:var(--sp3)}
+/* amenities — hairline divider rows, no boxes (anti-bento) */
+.amen-stack{margin-top:var(--sp2);border-top:1px solid var(--line)}
+.amen-stack .km{border:none;border-radius:0;background:none;border-bottom:1px solid var(--line)}
+.amen-stack .km.open{box-shadow:none}
+.amen-stack .km-btn{padding:20px 4px;min-height:76px}
+.amen-stack .km-detail{padding:0 4px 24px 80px}
+@media(max-width:640px){.amen-stack .km-detail{padding:0 4px 22px 4px}}
+/* Aniwall-style embossed icon tile */
+.km-btn .ic{box-shadow:inset 0 2px 4px rgba(255,255,255,.75),inset 0 -3px 6px rgba(96,54,20,.1),0 5px 14px rgba(96,54,20,.1)}
 /* ============ REVIEWS carousel (DRIFT snap-rail + Arca keyboard nav) ============ */
 .rev-head{display:grid;grid-template-columns:auto 1fr;gap:var(--sp4);align-items:center;margin:var(--sp2) 0 var(--sp4)}
 @media(max-width:760px){.rev-head{grid-template-columns:1fr;gap:var(--sp2)}}
@@ -179,7 +194,9 @@ nav.scrolled .nav-links{color:var(--ink2)}
 .rev-view{position:relative}
 .rev-track{display:flex;gap:18px;overflow-x:auto;padding:6px 2px 24px;scroll-snap-type:x mandatory;scrollbar-width:none;cursor:grab}
 .rev-track::-webkit-scrollbar{display:none}
-.rev{scroll-snap-align:center;flex:0 0 min(292px,74vw);background:linear-gradient(180deg,#FFFDF9,#FFF6E9);border:1px solid var(--line);border-radius:20px;padding:24px;box-shadow:0 12px 34px rgba(96,54,20,.09);border-top:4px solid var(--amber);user-select:none}
+.rev{scroll-snap-align:center;flex:0 0 min(292px,74vw);background:#FFFDF9;border:1px solid #EFE0CC;border-radius:20px;padding:26px;box-shadow:0 14px 36px rgba(96,54,20,.1);user-select:none;transition:transform .5s var(--ease),box-shadow .5s var(--ease)}
+.rev:hover{transform:translateY(-4px);box-shadow:0 22px 50px rgba(96,54,20,.14)}
+.rev .rq{font-family:Fraunces,serif;font-size:2.4rem;line-height:.8;color:var(--amber);display:block;margin-bottom:6px}
 .rev .stars{color:#E79A3C;letter-spacing:2.5px;font-size:.92rem}
 .rev p{line-height:1.62;color:var(--ink2);margin:11px 0 14px;font-size:.93rem;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
 .rev .rfoot{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
@@ -194,14 +211,14 @@ nav.scrolled .nav-links{color:var(--ink2)}
 .rev-dots button{width:8px;height:8px;border-radius:99px;border:none;background:#DCC9B4;cursor:pointer;padding:14px 6px;background-clip:content-box;transition:background .3s,width .45s cubic-bezier(.34,1.56,.64,1)}
 .rev-dots button.on{background:var(--caramel);width:22px;background-clip:content-box}
 @media(max-width:760px){.rev-arrow{display:none}}
-/* move-in — snap rail, no pin */
-.mv-rail{display:flex;gap:18px;margin-top:var(--sp3);overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;padding-bottom:8px}
-.mv-rail::-webkit-scrollbar{display:none}
-.mv-card{scroll-snap-align:start;flex:0 0 min(360px,82vw);border-radius:var(--r-lg);padding:34px 30px}
-.mv-card .n{font-family:Fraunces,serif;font-size:3.4rem;line-height:1;opacity:.3}
-.mv-card h3{font-size:1.45rem;margin:10px 0 8px}
-.mv-card p{color:var(--ink2);font-size:.97rem}
-@media(min-width:900px){.mv-rail{overflow:visible;display:grid;grid-template-columns:repeat(3,1fr)}}
+/* move-in — numbered ledger rows (Corvane ledger, anti-bento) */
+.mv-ledger{margin-top:var(--sp3);border-top:1px solid var(--line)}
+.mv-row{display:flex;gap:22px;align-items:baseline;padding:26px 4px;border-bottom:1px solid var(--line)}
+.mv-row .n{font-family:Fraunces,serif;font-size:2.6rem;line-height:1;color:var(--caramel);flex:none;min-width:64px}
+.mv-row h3{font-size:1.3rem;margin-bottom:6px}
+.mv-row p{color:var(--ink2);font-size:.97rem;max-width:44rem}
+.mv-row p b{color:var(--ink)}
+@media(max-width:640px){.mv-row{gap:16px}.mv-row .n{font-size:2rem;min-width:48px}}
 /* location */
 .loc-grid{display:grid;grid-template-columns:1fr 1.1fr;gap:var(--sp4);align-items:start}
 @media(max-width:920px){.loc-grid{grid-template-columns:1fr}}
@@ -211,8 +228,9 @@ nav.scrolled .nav-links{color:var(--ink2)}
 .loc-row small{margin-left:auto;color:var(--muted);font-weight:600;white-space:nowrap}
 .mapbox{border-radius:var(--r-lg);overflow:hidden;box-shadow:var(--sh)}
 .mapbox iframe{width:100%;height:420px;border:0;display:block}
-/* faq */
-.faq details{background:var(--paper);border:1px solid var(--line);border-radius:var(--r-md);padding:20px 24px;margin-top:12px}
+/* faq — divider rows, no boxes (anti-bento) */
+.faq details{border-bottom:1px solid var(--line);padding:20px 4px}
+.faq details:first-of-type{border-top:1px solid var(--line)}
 .faq summary{font-weight:800;cursor:pointer;font-size:1rem;min-height:44px;display:flex;align-items:center;list-style:none}
 .faq summary::-webkit-details-marker{display:none}
 .faq summary::after{content:"+";margin-left:auto;font-size:1.4rem;color:var(--caramel);font-weight:400}
@@ -247,6 +265,7 @@ footer{background:#1D130C;color:#EAD9C6;padding:var(--sp6) 0 calc(var(--sp5) + 6
 @media(max-width:640px){section{padding:56px 0}}
 @media (prefers-reduced-motion:reduce){
   .mq-track{animation:none}
+  .hero-slide.on{animation:none}
   html{scroll-behavior:auto}
   .rv{opacity:1;transform:none}
 }
@@ -262,16 +281,16 @@ a,button{touch-action:manipulation;-webkit-tap-highlight-color:transparent}
 </div></nav>
 
 <header class="hero" id="top">
-<div class="hero-bg" role="img" aria-label="Terrace sitting area at night — real photo of Monkey Sholders"></div>
+<div class="hero-bg" role="img" aria-label="Terrace sitting area, terrace and terrace gym at night — real photos of Monkey Sholders">
+<div class="hero-slide on" style="background-image:url(assets/rooftop-night.jpg)"></div>
+<div class="hero-slide" style="background-image:url(assets/terrace-view-night.jpg)"></div>
+<div class="hero-slide" style="background-image:url(assets/gym.jpg)"></div>
+</div>
 <div class="hero-shade"></div>
 <div class="wrap hero-in">
-<span class="badge"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.5l2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.4 6.1 20.5l1.2-6.5L2.5 9.4l6.6-.9z"/></svg>4.2 · 66 Google reviews · Nallurhalli, Whitefield</span>
 <h1>Whitefield living, <em>the homely way.</em></h1>
 <p class="sub">Real rooms. 3 homely meals a day. A terrace gym. One rent — everything included.</p>
-<div class="hero-prices">
-<div class="pchip"><span>Twin Sharing</span><s>₹12,000</s><b>₹11,000</b> <small>/mo</small></div>
-<div class="pchip"><span>Single Room</span><s>₹20,000</s><b>₹18,000</b> <small>/mo</small></div>
-</div>
+<p class="hero-price"><b>Twin ₹11,000</b><span class="sep">·</span><b>Single ₹18,000</b><span class="all">per month — all-inclusive</span></p>
 <div class="hero-cta">
 <a class="btn wa" target="_blank" rel="noopener" href="https://wa.me/918050974846?text=Hi%20Monkey%20Sholders!%20I%27d%20like%20to%20enquire%20about%20a%20room."><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a8 8 0 0 1-8 8H5l-2 2V12a8 8 0 0 1 8-8h2a8 8 0 0 1 8 8z"/></svg>Enquire on WhatsApp</a>
 <a class="btn ghost" href="#rooms">See rooms</a>
@@ -280,48 +299,56 @@ a,button{touch-action:manipulation;-webkit-tap-highlight-color:transparent}
 
 <div class="marquee" aria-hidden="true"><div class="mq-track" id="mq"></div></div>
 
-<div class="wrap proof"><div class="proof-in rv">
-<div class="proof-cell"><b>4.2★</b><span>Google rating<br/>66 reviews</span></div>
-<div class="proof-cell"><b>6</b><span>Floors · lift ·<br/>terrace gym</span></div>
-<div class="proof-cell"><b>3</b><span>Homely meals<br/>a day</span></div>
-<div class="proof-cell"><b>₹5,000</b><span>Deposit only ·<br/>refundable</span></div>
+<div class="proofline"><div class="pl-in rv">
+<span><b>6</b> floors · lift · terrace gym + table tennis</span><span class="dot">✦</span>
+<span><b>3</b> homely meals a day</span><span class="dot">✦</span>
+<span><b>₹5,000</b> booking — <span class="hl">100% redeemable</span></span><span class="dot">✦</span>
+<span>Walkable to the ITPL back gate</span>
 </div></div>
 
 <section id="rooms"><div class="wrap">
 <div class="sec-head rv"><span class="kicker">Rooms &amp; pricing</span><h2 class="h2">Two rooms. <em>One honest rent.</em></h2>
-<p class="lede">Every photo is the actual property. Tap “Know more” for the full picture.</p></div>
+<p class="lede">Real photos of the actual rooms. Swipe sideways — tap “Know more” for details.</p></div>
+<div class="rooms-rail rv" id="rooms-rail">
 
-<div class="room km-room km rv">
-<div class="r-media"><span class="r-save">SAVE ₹1,000 / MONTH</span><img src="assets/room-twin-blue.jpg" alt="Real twin sharing room — blue accent wall" loading="lazy"/></div>
-<div class="r-body"><span class="tag" style="background:var(--mint);color:#20503A">MOST POPULAR</span>
+<article class="rcard hl">
+<div class="rc-media"><span class="rc-save">SAVE ₹1,000 / MONTH</span><img src="assets/room-twin-blue.jpg" alt="Real twin sharing room — blue accent wall" loading="lazy"/></div>
+<div class="rc-body"><span class="rtag" style="background:var(--mint);color:#20503A">MOST POPULAR</span>
 <h3>Twin Sharing</h3><p class="one">Share with a friend — or meet your new one.</p>
-<div class="r-amt"><s>₹12,000</s>₹11,000</div><p class="r-per">/ person / month · all-inclusive</p>
-<button class="km-btn" style="min-height:52px;padding:6px 0" aria-expanded="false"><span class="tx" style="font-weight:800">Know more <span class="plus" style="width:34px;height:34px;display:inline-grid;vertical-align:-11px;margin-left:6px"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span></span></button>
-<div class="km-body"><div><div class="km-detail" style="padding:0 0 4px">
+<div class="rc-price"><s>₹12,000</s><b>₹11,000</b></div><p class="rc-per">/ person / month · all-inclusive</p>
+<div class="km rc-km"><button class="km-btn" aria-expanded="false"><span class="tx" style="font-weight:800">Know more <span class="plus" style="width:34px;height:34px;display:inline-grid;vertical-align:-11px;margin-left:6px"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span></span></button>
+<div class="km-body"><div><div class="km-detail">
 <ul><li><svg viewBox="0 0 24 24"><path d="M4 12.5l5 5L20 6.5"/></svg>3 meals/day — veg &amp; non-veg, G-floor dining</li>
 <li><svg viewBox="0 0 24 24"><path d="M4 12.5l5 5L20 6.5"/></svg>WiFi, electricity, housekeeping &amp; laundry included</li>
 <li><svg viewBox="0 0 24 24"><path d="M4 12.5l5 5L20 6.5"/></svg>TV in room · fridge on your floor · wardrobe &amp; study desk</li>
 <li><svg viewBox="0 0 24 24"><path d="M4 12.5l5 5L20 6.5"/></svg>Private balcony in every room · attached bathroom</li>
-<li><svg viewBox="0 0 24 24"><path d="M4 12.5l5 5L20 6.5"/></svg>Terrace gym, TT, WFH lounge, rooftop access</li>
-<li><svg viewBox="0 0 24 24"><path d="M4 12.5l5 5L20 6.5"/></svg>Deposit ₹5,000 (refundable) · Booking ₹5,000 · Notice 30 days</li></ul>
-</div></div></div>
-<a class="btn amber" href="#enquire" style="margin-top:20px">Enquire for Twin →</a></div></div>
+<li><svg viewBox="0 0 24 24"><path d="M4 12.5l5 5L20 6.5"/></svg>Terrace gym + table tennis, WFH lounge, rooftop access</li>
+<li><svg viewBox="0 0 24 24"><path d="M4 12.5l5 5L20 6.5"/></svg>Booking ₹5,000 — fully redeemable against rent</li>
+<li><svg viewBox="0 0 24 24"><path d="M4 12.5l5 5L20 6.5"/></svg>Move-in: booking + first month's rent · security amount partially refundable at move-out · 30-day notice</li></ul>
+</div></div></div></div>
+<a class="btn amber" href="#enquire">Enquire for Twin →</a></div>
+</article>
 
-<div class="room flip km-room km rv">
-<div class="r-media"><span class="r-save">SAVE ₹2,000 / MONTH</span><img src="assets/room-single.jpg" alt="Real single room" loading="lazy"/></div>
-<div class="r-body"><span class="tag" style="background:var(--lav);color:#4A3F78">FULL PRIVACY</span>
+<article class="rcard">
+<div class="rc-media"><span class="rc-save">SAVE ₹2,000 / MONTH</span><img src="assets/room-single.jpg" alt="Real single room — one bed, same room as twin" loading="lazy"/></div>
+<div class="rc-body"><span class="rtag" style="background:var(--lav);color:#4A3F78">FULL PRIVACY</span>
 <h3>Single Room</h3><p class="one">Your own space. Sleep, work, recharge.</p>
-<div class="r-amt"><s>₹20,000</s>₹18,000</div><p class="r-per">/ month · all-inclusive</p>
-<button class="km-btn" style="min-height:52px;padding:6px 0" aria-expanded="false"><span class="tx" style="font-weight:800">Know more <span class="plus" style="width:34px;height:34px;display:inline-grid;vertical-align:-11px;margin-left:6px"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span></span></button>
-<div class="km-body"><div><div class="km-detail" style="padding:0 0 4px">
+<div class="rc-price"><s>₹20,000</s><b>₹18,000</b></div><p class="rc-per">/ month · all-inclusive</p>
+<div class="km rc-km"><button class="km-btn" aria-expanded="false"><span class="tx" style="font-weight:800">Know more <span class="plus" style="width:34px;height:34px;display:inline-grid;vertical-align:-11px;margin-left:6px"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span></span></button>
+<div class="km-body"><div><div class="km-detail">
 <ul><li><svg viewBox="0 0 24 24"><path d="M4 12.5l5 5L20 6.5"/></svg>3 meals/day — veg &amp; non-veg, G-floor dining</li>
 <li><svg viewBox="0 0 24 24"><path d="M4 12.5l5 5L20 6.5"/></svg>WiFi, electricity, housekeeping &amp; laundry included</li>
 <li><svg viewBox="0 0 24 24"><path d="M4 12.5l5 5L20 6.5"/></svg>TV in room · fridge on your floor · wardrobe &amp; study desk</li>
-<li><svg viewBox="0 0 24 24"><path d="M4 12.5l5 5L20 6.5"/></svg>Private balcony in every room · attached bathroom</li>
-<li><svg viewBox="0 0 24 24"><path d="M4 12.5l5 5L20 6.5"/></svg>Terrace gym, TT, WFH lounge, rooftop access</li>
-<li><svg viewBox="0 0 24 24"><path d="M4 12.5l5 5L20 6.5"/></svg>Deposit ₹5,000 (refundable) · Booking ₹5,000 · Notice 30 days</li></ul>
-</div></div></div>
-<a class="btn" href="#enquire" style="margin-top:20px">Enquire for Single →</a></div></div>
+<li><svg viewBox="0 0 24 24"><path d="M4 12.5l5 5L20 6.5"/></svg>Private balcony · attached bathroom</li>
+<li><svg viewBox="0 0 24 24"><path d="M4 12.5l5 5L20 6.5"/></svg>Terrace gym + table tennis, WFH lounge, rooftop access</li>
+<li><svg viewBox="0 0 24 24"><path d="M4 12.5l5 5L20 6.5"/></svg>Booking ₹5,000 — fully redeemable against rent</li>
+<li><svg viewBox="0 0 24 24"><path d="M4 12.5l5 5L20 6.5"/></svg>Move-in: booking + first month's rent · security amount partially refundable at move-out · 30-day notice</li></ul>
+</div></div></div></div>
+<a class="btn" href="#enquire">Enquire for Single →</a></div>
+</article>
+
+</div>
+<div class="rail-hint"><svg viewBox="0 0 40 18"><path d="M2 9h34M28 3l6 6-6 6"/></svg>Swipe to compare both rooms</div>
 </div></section>
 
 <section class="dark" id="showcase"><div class="wrap">
@@ -364,10 +391,10 @@ a,button{touch-action:manipulation;-webkit-tap-highlight-color:transparent}
 
 <section id="movein"><div class="wrap">
 <div class="sec-head rv"><span class="kicker">Move in</span><h2 class="h2">Three steps <em>home.</em></h2></div>
-<div class="mv-rail rv">
-<div class="mv-card" style="background:var(--peach)"><div class="n">01</div><h3>Book</h3><p>WhatsApp us, visit any day. Reserve with a ₹5,000 booking amount.</p></div>
-<div class="mv-card" style="background:var(--mint)"><div class="n">02</div><h3>Move in</h3><p>Deposit only ₹5,000. Key, WiFi and meals — ready day one.</p></div>
-<div class="mv-card" style="background:var(--lav)"><div class="n">03</div><h3>Live</h3><p>Terrace gym, WFH lounge, rooftop evenings. Tenant portal included.</p></div>
+<div class="mv-ledger rv">
+<div class="mv-row"><span class="n">01</span><div><h3>Book</h3><p>WhatsApp us, visit any day. Reserve with <b>₹5,000 — fully redeemable</b> against your rent.</p></div></div>
+<div class="mv-row"><span class="n">02</span><div><h3>Move in</h3><p>Pay the <b>booking amount + your first month's rent.</b> Key, WiFi and meals — ready day one.</p></div></div>
+<div class="mv-row"><span class="n">03</span><div><h3>Live</h3><p>Terrace gym + table tennis, WFH lounge, rooftop evenings. The security amount is <b>partially refundable</b> when you move out.</p></div></div>
 </div></div></section>
 
 <section id="location" style="background:#fff"><div class="wrap loc-grid">
@@ -387,7 +414,7 @@ a,button{touch-action:manipulation;-webkit-tap-highlight-color:transparent}
 <div class="sec-head rv" style="text-align:center"><span class="kicker">FAQ</span><h2 class="h2">Before you <em>ask…</em></h2></div>
 <div class="rv">
 <details><summary>What’s included in the rent?</summary><p>Everything: 3 meals a day (veg &amp; non-veg), high-speed WiFi, electricity, housekeeping and laundry. Plus TV in your room, a fridge on your floor, terrace gym, WFH lounge and rooftop access.</p></details>
-<details><summary>Deposit, booking &amp; notice?</summary><p>Deposit ₹5,000 (fully refundable). Booking amount ₹5,000. Notice period 30 days. No brokerage — and no move-out fee, ever.</p></details>
+<details><summary>Booking, rent &amp; notice?</summary><p>No security deposit. Book with ₹5,000 — fully redeemable against your rent. At move-in you pay the booking amount plus your first month's rent; the security amount is partially refundable when you move out. 30-day notice. No brokerage — and no move-out fee, ever.</p></details>
 <details><summary>Is parking available?</summary><p>Yes — dedicated 2-wheeler parking for your bike or scooter.</p></details>
 <details><summary>Where exactly is it?</summary><p>Nallurhalli, Whitefield — walkable to the ITPL back gate, close to Divyashree Tech Park, EPIP Zone, Nallurhalli Metro and Vydehi Hospital.</p></details>
 <details><summary>Can I visit first?</summary><p>Yes — call or WhatsApp +91 80509 74846 and visit any day. Browse the real photos and videos above first.</p></details>
@@ -434,7 +461,7 @@ const RM=matchMedia("(prefers-reduced-motion: reduce)").matches;
 /* nav scroll */
 addEventListener("scroll",()=>document.getElementById("nav").classList.toggle("scrolled",scrollY>60),{passive:true});
 /* marquee */
-const MQ="TWIN ₹11,000 ALL-INCLUSIVE ✦ SINGLE ₹18,000 ✦ 3 MEALS · VEG + NON-VEG ✦ DEPOSIT ONLY ₹5,000 ✦ NO MOVE-OUT FEE ✦ TERRACE GYM ✦ WFH LOUNGE ✦ WALKABLE TO ITPL ✦ ";
+const MQ="TWIN ₹11,000 ALL-INCLUSIVE ✦ SINGLE ₹18,000 ✦ 3 MEALS · VEG + NON-VEG ✦ BOOKING 100% REDEEMABLE ✦ NO MOVE-OUT FEE ✦ TERRACE GYM + TABLE TENNIS ✦ WFH LOUNGE ✦ WALKABLE TO ITPL ✦ ";
 document.getElementById("mq").innerHTML=`<span>${MQ.repeat(2)}</span><span>${MQ.repeat(2)}</span>`;
 /* ============ KNOW-MORE (tap to expand) ============ */
 document.addEventListener("click",e=>{
@@ -567,7 +594,7 @@ const REVIEWS=[
 ];
 (function(){
 const track=document.getElementById("rev-track"),dots=document.getElementById("rev-dots");
-track.innerHTML=REVIEWS.map(r=>`<article class="rev"><div class="stars">${"★".repeat(r[1])}${"☆".repeat(5-r[1])}</div><p>${r[2]}</p><div class="rfoot"><b>${r[0]}</b><span class="rchip">${r[3]}</span></div><span class="rsrc">${r[4]}</span></article>`).join("");
+track.innerHTML=REVIEWS.map(r=>`<article class="rev"><span class="rq" aria-hidden="true">“</span><div class="stars">${"★".repeat(r[1])}${"☆".repeat(5-r[1])}</div><p>${r[2]}</p><div class="rfoot"><b>${r[0]}</b><span class="rchip">${r[3]}</span></div><span class="rsrc">${r[4]}</span></article>`).join("");
 REVIEWS.forEach((_,i)=>{const b=document.createElement("button");b.type="button";b.setAttribute("aria-label","Show review "+(i+1));b.onclick=()=>to(i);dots.appendChild(b)});
 const cards=[...track.children];
 function active(){let bi=0,bd=1e9;cards.forEach((c,i)=>{const d=Math.abs(c.offsetLeft-track.scrollLeft-track.clientWidth/2+c.clientWidth/2);if(d<bd){bd=d;bi=i}});return bi}
@@ -621,6 +648,13 @@ function close(){lb.classList.remove("on");document.body.style.overflow="";if(lb
 x.onclick=close;lb.addEventListener("click",e=>{if(e.target===lb)close()});
 addEventListener("keydown",e=>{if(e.key==="Escape"&&lb.classList.contains("on"))close()});
 })();
+/* ============ HERO slideshow (ambient crossfade + Ken Burns, no controls) ============ */
+(function(){
+  if(RM) return;
+  const slides=[...document.querySelectorAll(".hero-slide")]; if(slides.length<2) return;
+  let i=0;
+  setInterval(()=>{slides[i].classList.remove("on");i=(i+1)%slides.length;slides[i].classList.add("on")},7000);
+})();
 /* ============ HERO PARALLAX + MAGNETIC CTAs ============ */
 (function(){
 const heroBg=document.querySelector(".hero-bg");let pTick=false;
@@ -632,6 +666,13 @@ if(matchMedia("(pointer:fine)").matches&&!RM){
  });
 }
 })();
+/* ============ TILT on cards (ThreeUI-style pointer physics, desktop only) ============ */
+if(matchMedia("(pointer:fine)").matches&&!RM){
+ document.querySelectorAll(".rcard,.vid").forEach(c=>{
+  c.addEventListener("mousemove",e=>{const r=c.getBoundingClientRect();const x=(e.clientX-r.left-r.width/2)/r.width,y=(e.clientY-r.top-r.height/2)/r.height;c.style.transition="transform .12s ease-out";c.style.transform=`perspective(900px) rotateY(${(x*5).toFixed(2)}deg) rotateX(${(-y*5).toFixed(2)}deg) translateY(-4px)`});
+  c.addEventListener("mouseleave",()=>{c.style.transition="transform .7s cubic-bezier(.25,1.35,.4,1)";c.style.transform=""});
+ });
+}
 /* ============ REVEALS (GSAP, guarded) ============ */
 if(window.gsap&&!RM){
   gsap.registerPlugin(ScrollTrigger);
